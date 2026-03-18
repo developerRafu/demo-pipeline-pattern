@@ -15,4 +15,8 @@ public interface Step {
     default List<StepDefinition> dependsOn() {
         return Collections.emptyList();
     }
+
+    default boolean required(){
+        return false;
+    }
 }

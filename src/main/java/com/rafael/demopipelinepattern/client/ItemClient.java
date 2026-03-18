@@ -1,5 +1,6 @@
 package com.rafael.demopipelinepattern.client;
 
+import com.rafael.demopipelinepattern.helper.SleepHelper;
 import com.rafael.demopipelinepattern.models.response.CategoryResponse;
 import com.rafael.demopipelinepattern.models.response.ItemResponse;
 import com.rafael.demopipelinepattern.models.response.PriceResponse;
@@ -11,17 +12,18 @@ import java.math.BigDecimal;
 public class ItemClient {
 
     public ItemResponse getById(final String id) {
+        SleepHelper.sleep("ItemClient");
         return ItemResponse.builder()
                 .id(id)
-                .name("DEFAULT_ITEM_NAME")
-                .description("DEFAULT_ITEM_DESCRIPTION")
+                .name("item name")
+                .description("Some item description")
                 .categoryResponse(CategoryResponse.builder()
-                        .id("DEFAULT_CATEGORY_ID")
-                        .name("DEFAULT_CATEGORY_NAME")
-                        .description("DEFAULT_CATEGORY_DESCRIPTION")
+                        .id("categoryId01")
+                        .name("category name")
+                        .description("some category description")
                         .build())
                 .price(PriceResponse.builder()
-                        .price(BigDecimal.ZERO)
+                        .price(BigDecimal.valueOf(100))
                         .build())
                 .build();
     }
