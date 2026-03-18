@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CategoryResponse {
-    private String id;
-    private String name;
-    private String description;
+  private String id;
+  private String name;
+  private String description;
 }

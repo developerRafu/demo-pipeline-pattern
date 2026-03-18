@@ -12,8 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class InventoryResponse {
-    private String id;
-    private String itemId;
-    private Integer quantity;
-    private Boolean available;
+  private String id;
+  private String itemId;
+  private Integer quantity;
+  private Boolean available;
 }

@@ -6,8 +6,11 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum StepDefinition {
-    LOAD_ITEM(0),
-    LOAD_INVENTORY(1),
-    LOAD_PROMOTION(2);
-    private final Integer order;
+  PRE_LOAD(0),
+  LOAD_ITEM(1),
+  LOAD_INVENTORY(2),
+  LOAD_PROMOTION(3),
+  RESPONSE_MAPPING(4),
+  POST_MAPPING_RULES(5);
+  private final Integer order;
 }

@@ -10,15 +10,15 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class LoadPromotionStep implements AsyncStep {
 
-    private final PromotionService promotionService;
+  private final PromotionService promotionService;
 
-    @Override
-    public void run(final Context context) {
-        context.setPromotion(promotionService.getByItemId(context.getId()));
-    }
+  @Override
+  public void run(final Context context) {
+    context.setPromotion(promotionService.getByItemId(context.getId()));
+  }
 
-    @Override
-    public StepDefinition definition() {
-        return StepDefinition.LOAD_PROMOTION;
-    }
+  @Override
+  public StepDefinition definition() {
+    return StepDefinition.LOAD_PROMOTION;
+  }
 }

@@ -12,8 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class CatalogResponse {
-    private ItemResponse item;
-    private PromotionResponse promotion;
-    private InventoryResponse inventory;
-    private MetaDataResponse metadata;
+  private ItemResponse item;
+  private PromotionResponse promotion;
+  private InventoryResponse inventory;
+  private MetaDataResponse metadata;
 }

@@ -10,16 +10,15 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class LoadInventoryStep implements AsyncStep {
 
-    private final InventoryService inventoryService;
+  private final InventoryService inventoryService;
 
-    @Override
-    public void run(final Context context) {
-        context.setInventory(inventoryService.getByItemId(context.getId()));
-    }
+  @Override
+  public void run(final Context context) {
+    context.setInventory(inventoryService.getByItemId(context.getId()));
+  }
 
-    @Override
-    public StepDefinition definition() {
-        return StepDefinition.LOAD_INVENTORY;
-    }
-
+  @Override
+  public StepDefinition definition() {
+    return StepDefinition.LOAD_INVENTORY;
+  }
 }

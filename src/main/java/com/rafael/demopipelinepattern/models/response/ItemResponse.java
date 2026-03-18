@@ -12,9 +12,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemResponse {
-    private String id;
-    private String name;
-    private String description;
-    private CategoryResponse categoryResponse;
-    private PriceResponse price;
+  private String id;
+  private String name;
+  private String description;
+  private CategoryResponse categoryResponse;
+  private PriceResponse price;
 }
