@@ -8,13 +8,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class IdValidation implements PreLoadValidation {
-    @Override
-    public boolean shouldRun(final Context context) {
-        return context.getId() == null;
-    }
+  @Override
+  public boolean shouldRun(final Context context) {
+    return context.getId() == null;
+  }
 
-    @Override
-    public void run(final Context context) {
-        context.addError(Message.builder().text("Invalid id").type(MessageType.ERROR).module(MessageModule.PRE_LOAD_MODULE).build());
-    }
+  @Override
+  public void run(final Context context) {
+    context.addError(
+        Message.builder()
+            .text("Invalid id")
+            .type(MessageType.ERROR)
+            .module(MessageModule.PRE_LOAD_MODULE)
+            .build());
+  }
 }

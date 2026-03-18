@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class InventoryService {
 
-    private final InventoryClient inventoryClient;
+  private final InventoryClient inventoryClient;
 
-    public InventoryResponse getByItemId(final String itemId) {
-        return inventoryClient.getByItemId(itemId);
-    }
+  public InventoryResponse getByItemId(final String itemId) {
+    return inventoryClient.getByItemId(itemId);
+  }
 }

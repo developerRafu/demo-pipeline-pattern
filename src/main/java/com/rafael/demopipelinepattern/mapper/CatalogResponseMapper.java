@@ -4,25 +4,20 @@ import com.rafael.demopipelinepattern.models.Context;
 import com.rafael.demopipelinepattern.models.response.CatalogResponse;
 import com.rafael.demopipelinepattern.models.response.MetaDataResponse;
 
-import java.math.BigDecimal;
-
 public class CatalogResponseMapper {
 
-    private CatalogResponseMapper() {
-    }
+  private CatalogResponseMapper() {}
 
-    public static CatalogResponse toCatalogResponse(final Context context) {
-        return CatalogResponse.builder()
-                .item(context.getItem())
-                .promotion(context.getPromotion())
-                .inventory(context.getInventory())
-                .metadata(buildMetadata(context))
-                .build();
-    }
+  public static CatalogResponse toCatalogResponse(final Context context) {
+    return CatalogResponse.builder()
+        .item(context.getItem())
+        .promotion(context.getPromotion())
+        .inventory(context.getInventory())
+        .metadata(buildMetadata())
+        .build();
+  }
 
-    private static MetaDataResponse buildMetadata(final Context context) {
-
-        return MetaDataResponse.builder()
-                .build();
-    }
+  private static MetaDataResponse buildMetadata() {
+    return MetaDataResponse.builder().build();
+  }
 }

@@ -6,20 +6,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class InventoryRule implements ResponseRule {
 
-    @Override
-    public boolean shouldRun(final Context context) {
-        return context.getCatalogResponse() != null
-                && context.getCatalogResponse().getInventory() != null;
-    }
+  @Override
+  public boolean shouldRun(final Context context) {
+    return context.getCatalogResponse() != null
+        && context.getCatalogResponse().getInventory() != null;
+  }
 
-    @Override
-    public void run(final Context context) {
-        Integer quantity = context.getCatalogResponse().getInventory().getQuantity();
-        Boolean available = context.getCatalogResponse().getInventory().getAvailable();
+  @Override
+  public void run(final Context context) {
+    Integer quantity = context.getCatalogResponse().getInventory().getQuantity();
+    Boolean available = context.getCatalogResponse().getInventory().getAvailable();
 
-        boolean isAvailable = quantity != null && quantity > 0
-                && available != null && available;
+    boolean isAvailable = quantity != null && quantity > 0 && available != null && available;
 
-        context.getCatalogResponse().getMetadata().setAvailable(isAvailable);
-    }
+    context.getCatalogResponse().getMetadata().setAvailable(isAvailable);
+  }
 }

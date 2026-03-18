@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ItemService {
 
-    private final ItemClient itemClient;
+  private final ItemClient itemClient;
 
-    public ItemResponse getById(final String id) {
-        return itemClient.getById(id);
-    }
+  public ItemResponse getById(final String id) {
+    return itemClient.getById(id);
+  }
 }

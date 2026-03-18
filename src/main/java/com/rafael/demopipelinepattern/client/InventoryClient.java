@@ -4,18 +4,16 @@ import com.rafael.demopipelinepattern.helper.SleepHelper;
 import com.rafael.demopipelinepattern.models.response.InventoryResponse;
 import org.springframework.stereotype.Component;
 
-import java.util.Random;
-
 @Component
 public class InventoryClient {
 
-    public InventoryResponse getByItemId(final String itemId) {
-        SleepHelper.sleep("InventoryClient");
-        return InventoryResponse.builder()
-                .id("inventoryId01")
-                .itemId(itemId)
-                .quantity(10)
-                .available(Boolean.TRUE)
-                .build();
-    }
+  public InventoryResponse getByItemId(final String itemId) {
+    SleepHelper.sleep("InventoryClient");
+    return InventoryResponse.builder()
+        .id("inventoryId01")
+        .itemId(itemId)
+        .quantity(10)
+        .available(Boolean.TRUE)
+        .build();
+  }
 }

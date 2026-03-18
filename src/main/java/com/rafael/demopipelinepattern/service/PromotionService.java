@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class PromotionService {
 
-    private final PromotionClient promotionClient;
+  private final PromotionClient promotionClient;
 
-    public PromotionResponse getByItemId(final String itemId) {
-        return promotionClient.getByItemId(itemId);
-    }
+  public PromotionResponse getByItemId(final String itemId) {
+    return promotionClient.getByItemId(itemId);
+  }
 }
