@@ -8,12 +8,13 @@ import org.springframework.stereotype.Component;
 public class InventoryClient {
 
   public InventoryResponse getByItemId(final String itemId) {
-    SleepHelper.sleep("InventoryClient");
-    return InventoryResponse.builder()
-        .id("inventoryId01")
-        .itemId(itemId)
-        .quantity(10)
-        .available(Boolean.TRUE)
-        .build();
+    final InventoryResponse inventoryResponse =
+        InventoryResponse.builder()
+            .id("inventoryId01")
+            .itemId(itemId)
+            .quantity(10)
+            .available(Boolean.TRUE)
+            .build();
+    return SleepHelper.sleep("InventoryClient", inventoryResponse);
   }
 }

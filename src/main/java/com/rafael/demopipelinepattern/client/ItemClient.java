@@ -11,18 +11,19 @@ import org.springframework.stereotype.Component;
 public class ItemClient {
 
   public ItemResponse getById(final String id) {
-    SleepHelper.sleep("ItemClient");
-    return ItemResponse.builder()
-        .id(id)
-        .name("item name")
-        .description("Some item description")
-        .categoryResponse(
-            CategoryResponse.builder()
-                .id("categoryId01")
-                .name("category name")
-                .description("some category description")
-                .build())
-        .price(PriceResponse.builder().price(BigDecimal.valueOf(100)).build())
-        .build();
+    final ItemResponse itemResponse =
+        ItemResponse.builder()
+            .id(id)
+            .name("item name")
+            .description("Some item description")
+            .categoryResponse(
+                CategoryResponse.builder()
+                    .id("categoryId01")
+                    .name("category name")
+                    .description("some category description")
+                    .build())
+            .price(PriceResponse.builder().price(BigDecimal.valueOf(100)).build())
+            .build();
+    return SleepHelper.sleep("ItemClient", itemResponse);
   }
 }

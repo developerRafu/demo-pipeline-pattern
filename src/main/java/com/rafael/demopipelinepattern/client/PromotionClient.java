@@ -9,12 +9,13 @@ import org.springframework.stereotype.Component;
 public class PromotionClient {
 
   public PromotionResponse getByItemId(final String itemId) {
-    SleepHelper.sleep("PromotionClient");
-    return PromotionResponse.builder()
-        .id("DEFAULT_PROMOTION_ID")
-        .itemId(itemId)
-        .description("DEFAULT_PROMOTION_DESCRIPTION")
-        .percent(BigDecimal.valueOf(5))
-        .build();
+    final PromotionResponse promotionResponse =
+        PromotionResponse.builder()
+            .id("DEFAULT_PROMOTION_ID")
+            .itemId(itemId)
+            .description("DEFAULT_PROMOTION_DESCRIPTION")
+            .percent(BigDecimal.valueOf(5))
+            .build();
+    return SleepHelper.sleep("PromotionClient", promotionResponse);
   }
 }

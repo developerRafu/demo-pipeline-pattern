@@ -5,13 +5,31 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public final class SleepHelper {
-  public static void sleep(final String service) {
+
+  private SleepHelper() {}
+
+  public static <T> T sleep(final String service, final T data) {
     try {
       final var millis = new Random().nextInt(500) + 100;
       Thread.sleep(millis);
       log.info("It took {} to return {}", millis, service);
+
+      if (millis % 5 == 0) {
+        throw new RuntimeException("Error: millis is multiple of 5");
+      }
+
+      if (millis % 2 == 0) {
+        return null;
+      }
+
+      if (millis % 3 == 0) {
+        return data;
+      }
+
+      return data;
     } catch (InterruptedException e) {
       log.error("Error sleeping {}", e.getMessage(), e);
+      throw new RuntimeException("Interrupted while sleeping", e);
     }
   }
 }
