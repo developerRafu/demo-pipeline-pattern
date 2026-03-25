@@ -14,10 +14,6 @@ public final class SleepHelper {
       Thread.sleep(millis);
       log.info("It took {} to return {}", millis, service);
 
-      if (millis % 5 == 0) {
-        throw new RuntimeException("Error: millis is multiple of 5");
-      }
-
       if (millis % 2 == 0) {
         return null;
       }
