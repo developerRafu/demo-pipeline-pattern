@@ -27,11 +27,6 @@ public class PostMappingStep implements Step {
   }
 
   @Override
-  public boolean required() {
-    return true;
-  }
-
-  @Override
   public List<StepDefinition> dependsOn() {
     return List.of(StepDefinition.RESPONSE_MAPPING);
   }

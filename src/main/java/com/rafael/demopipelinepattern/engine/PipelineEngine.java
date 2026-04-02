@@ -86,18 +86,14 @@ public class PipelineEngine {
             future.complete(null);
           } catch (Exception e) {
             log.error("Error running step {}", step.definition(), e);
-            if (step.required()) {
-              future.completeExceptionally(e);
-            } else {
-              context.addError(
-                  Message.builder()
-                      .text("Error running step")
-                      .type(MessageType.WARNING)
-                      .module(MessageModule.ENGINE_MODULE)
-                      .details(List.of(e.getMessage()))
-                      .build());
-              future.complete(null);
-            }
+            context.addError(
+                Message.builder()
+                    .text("Error running step")
+                    .type(MessageType.WARNING)
+                    .module(MessageModule.ENGINE_MODULE)
+                    .details(List.of(e.getMessage()))
+                    .build());
+            future.complete(null);
           }
         },
         asyncExecutor);
