@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class PointService {
-    private final PointClient client;
+  private final PointClient client;
 
-    public PointResponse getByItemId(final String itemId) {
-        return client.getByItemId(itemId);
-    }
+  public PointResponse getByItemId(final String itemId) {
+    return client.getByItemId(itemId);
+  }
 }

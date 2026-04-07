@@ -9,9 +9,6 @@ public class PointClient {
 
   public PointResponse getByItemId(final String itemId) {
     SleepHelper.sleep("PointClient");
-    return PointResponse.builder()
-        .itemId(itemId)
-        .quantity(100)
-        .build();
+    return PointResponse.builder().itemId(itemId).quantity(100).build();
   }
 }

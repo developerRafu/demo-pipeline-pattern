@@ -12,6 +12,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class PointResponse {
-    private String itemId;
-    private Integer quantity;
+  private String itemId;
+  private Integer quantity;
 }
