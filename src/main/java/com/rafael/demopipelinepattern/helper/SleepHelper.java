@@ -14,14 +14,6 @@ public final class SleepHelper {
       Thread.sleep(millis);
       log.info("It took {} to return {}", millis, service);
 
-      if (millis % 2 == 0) {
-        return null;
-      }
-
-      if (millis % 3 == 0) {
-        return data;
-      }
-
       return data;
     } catch (InterruptedException e) {
       log.error("Error sleeping {}", e.getMessage(), e);
